@@ -12,9 +12,9 @@ const gcd = () => {
     let num2 = getRandomNumber(50, 100);
     const correctAnswer = () => {
       while (num2) {
-        const t = num2; // 10
-        num2 = num1 % num2; // 0,5 // 0
-        num1 = t; // 10 // 10
+        const t = num2;
+        num2 = num1 % num2;
+        num1 = t;
       }
       return num1;
     };
