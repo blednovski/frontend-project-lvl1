@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import primeCheck from '../src/games/prime-logic.js';
+import { gameRule, logic } from '../src/games/prime-logic.js';
+import newGame from '../src/index.js';
 
-primeCheck();
+newGame(gameRule, logic);

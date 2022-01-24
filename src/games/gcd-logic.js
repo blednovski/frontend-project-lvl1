@@ -1,36 +1,26 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const gcd = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Find the greatest common divisor of given numbers.');
+const gameRule = 'Find the greatest common divisor of given numbers.';
 
-  for (let i = 1; i <= 3; i += 1) {
-    let num1 = getRandomNumber(1, 50);
-    let num2 = getRandomNumber(50, 100);
-    const correctAnswer = () => {
-      while (num2) {
-        const t = num2;
-        num2 = num1 % num2;
-        num1 = t;
-      }
-      return num1;
-    };
-
-    const question = `${num1} ${num2}`;
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    const failAnswer = `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer()}".\nLet's try again, ${userName}!`;
-
-    if (Number(userAnswer) !== correctAnswer()) {
-      console.log(failAnswer);
-      break;
-    }
-    console.log('Correct!');
-    if (i === 3) console.log(`Congratulations, ${userName}!`);
+const gcd = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+  let t = 0;
+  while (b !== 0) {
+    t = b;
+    b = a % b;
+    a = t;
   }
+  const result = t;
+  return result;
 };
-export default gcd;
+
+const logic = () => {
+  const num1 = getRandomNumber(1, 50);
+  const num2 = getRandomNumber(50, 100);
+  const question = `${num1} ${num2}`;
+  const correctAnswer = (gcd(num1, num2)).toString();
+  return [question, correctAnswer];
+};
+
+export { gameRule, logic };

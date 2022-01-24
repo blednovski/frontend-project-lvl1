@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import gcd from '../src/games/gcd-logic.js';
+import { gameRule, logic } from '../src/games/gcd-logic.js';
+import newGame from '../src/index.js';
 
-gcd();
+newGame(gameRule, logic);

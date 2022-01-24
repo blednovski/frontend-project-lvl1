@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import calc from '../src/games/calc-logic.js';
+import { gameRule, logic } from '../src/games/calc-logic.js';
+import newGame from '../src/index.js';
 
-calc();
+newGame(gameRule, logic);
