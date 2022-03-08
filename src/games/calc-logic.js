@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber.js';
+import newGame from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -21,4 +22,6 @@ const logic = () => {
   return [question, correctAnswer];
 };
 
-export { gameRule, logic };
+const calcGame = () => newGame(gameRule, logic);
+
+export default calcGame;

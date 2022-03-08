@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { gameRule, logic } from '../src/games/progression-logic.js';
-import newGame from '../src/index.js';
+import progGame from '../src/games/progression-logic.js';
 
-newGame(gameRule, logic);
+progGame();
