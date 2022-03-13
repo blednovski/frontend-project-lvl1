@@ -3,12 +3,7 @@ import newGame from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (num1, num2) => {
-  let a = num1;
-  let b = num2;
-  while (b !== 0) b = a % (a = b);
-  return a;
-};
+const gcd = (num1, num2) => ((num1 % num2) ? gcd(num2, num1 % num2) : Math.abs(num2));
 
 const logic = () => {
   const num1 = getRandomNumber(1, 50);
