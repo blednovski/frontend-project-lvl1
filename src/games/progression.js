@@ -1,27 +1,27 @@
-import getRandomNumber from '../getRandomNumber.js';
+import getRandomNumber from '../utils.js';
 import startNewGame from '../index.js';
 
 const description = 'What number is missing in the progression?';
-const generateProgression = (progInitialNumber, progStep, progLength) => {
+const generateProgression = (initialNumber, step, length) => {
   const arr = [];
-  for (let i = 0; i < progLength; i += 1) {
-    arr.push(progInitialNumber + (progStep * i));
+  for (let i = 0; i < length; i += 1) {
+    arr.push(initialNumber + (step * i));
   }
   return arr;
 };
 
-const logic = () => {
+const generateRound = () => {
   const progLength = getRandomNumber(5, 11);
   const progInitialNumber = getRandomNumber(1, 50);
   const progStep = getRandomNumber(3, 7);
-  const correctNumberPosition = getRandomNumber(1, progLength - 1);
+  const hiddenNumberIndex = getRandomNumber(1, progLength - 1);
   const arr = generateProgression(progInitialNumber, progStep, progLength);
-  const correctAnswer = arr[correctNumberPosition].toString();
-  arr[correctNumberPosition] = '..';
+  const correctAnswer = arr[hiddenNumberIndex].toString();
+  arr[hiddenNumberIndex] = '..';
   const question = arr.join(' ');
   return [question, correctAnswer];
 };
 
-const playProgGame = () => startNewGame(description, logic);
+const runProgGame = () => startNewGame(description, generateRound);
 
-export default playProgGame;
+export default runProgGame;
