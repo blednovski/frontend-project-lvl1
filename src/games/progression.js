@@ -15,10 +15,10 @@ const generateRound = () => {
   const progInitialNumber = getRandomNumber(1, 50);
   const progStep = getRandomNumber(3, 7);
   const hiddenNumberIndex = getRandomNumber(1, progLength - 1);
-  const arr = generateProgression(progInitialNumber, progStep, progLength);
-  const correctAnswer = arr[hiddenNumberIndex].toString();
-  arr[hiddenNumberIndex] = '..';
-  const question = arr.join(' ');
+  const progression = generateProgression(progInitialNumber, progStep, progLength);
+  const correctAnswer = progression[hiddenNumberIndex].toString();
+  progression[hiddenNumberIndex] = '..';
+  const question = progression.join(' ');
   return [question, correctAnswer];
 };
 
