@@ -1,4 +1,4 @@
-#### Welcome to the Brain Games!
+### Welcome to the Brain Games!
 This is my very first JS training project which contains five CLI-games.
 
 How to install:
@@ -7,11 +7,10 @@ How to install:
 $ make install
 ```
 ```bash
-$ 
-sudo npm link
+$ sudo npm link
 ```
 
-#### Hexlet tests and linter status:
+### Hexlet tests and linter status:
 [![Actions Status](https://github.com/blednovski/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/blednovski/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/487dd148750dc716f6b3/maintainability)](https://codeclimate.com/github/blednovski/frontend-project-lvl1/maintainability)
 [![linter-check](https://github.com/blednovski/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg?branch=main)](https://github.com/blednovski/frontend-project-lvl1/actions/workflows/linter-check.yml)
